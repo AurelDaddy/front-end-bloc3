@@ -1,0 +1,39 @@
+<div class="container">
+    <form [formGroup]="promotionForm" (ngSubmit)="onSubmit()">
+    <p class="h4">Ajouter une Promotion à un produit: </p>
+    <!--<div class="mb-3" style="max-width: 22rem;">
+        <label for="idProduit" class="form-label">Id du Produit: </label>
+        <input class="form-control" id="idProduit" type="number" formControlName="idProduit">
+    </div>-->
+    <div class="mb-3" style="max-width: 22rem;">
+        <label class="form-label" for="idProduit" >Produit: </label>
+        <select class="form-select" aria-label="Default select example" style="max-width: 22rem;" formControlName="idProduit">
+            <option [ngValue]="null" disabled>Choisissez Votre Produit</option>
+            <option *ngFor="let prod of produitsList" [ngValue]="prod.id">
+            {{prod.libelle }}
+            </option>
+        </select>
+        </div>
+    <div class="mb-3" style="max-width: 22rem;">
+        <label class="form-label" for="datePromotion" >date: </label>
+        <input class="form-control" id="libelle" type="date" min="2023-11-01" max="2025-11-01" formControlName="datePromotion">
+    </div>
+    <div class="mb-3" style="max-width: 22rem;">
+        <label class="form-label" for="taux">Taux: </label>
+        <input class="form-control" id="taux" type="number" formControlName="taux">
+    </div>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" class="btn btn-outline-success" [disabled]="!promotionForm.valid">Submit</button>
+</form>
+</div>
+
+
+<!--
+    <select class="form-select" aria-label="Default select example" style="max-width: 22rem;" formControlName="libelle">
+            <option [ngValue]="null" disabled>Choisissez Votre Produit</option>
+            <option *ngFor="let prod of produitsList" [ngValue]="prod">
+            {{ prod.libelle }}
+          </option>
+        </select>
+-->
+
