@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+import { StorageService } from '../_services/storage.service';
+
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
@@ -9,8 +13,25 @@ export class HttpRequestInterceptor implements HttpInterceptor {
       withCredentials: true,
     });
 
-    return next.handle(req);
+    //return next.handle(req);
+
+    return next.handle(req).pipe(
+      catchError((error) => {
+        // logout when token is expired
+        /*
+                if (
+                  error instanceof HttpErrorResponse &&
+                  !req.url.includes('auth/signin') &&
+                  error.status === 401
+                ) {
+                  return this.handle401Error(req, next);
+                }
+        */
+        return throwError(() => error);
+      })
+    );
   }
+
 }
 
 export const httpInterceptorProviders = [

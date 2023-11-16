@@ -16,7 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 
-
 import { httpInterceptorProviders } from './_helpers/http.interceptors';
 
 

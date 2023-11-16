@@ -10,11 +10,13 @@ export class ProduitService {
 
   constructor( private http: HttpClient) { }
 
-  private allProduitsUrl = "http://localhost:8080/api/test/produit/";
-  private addProduitUrl = "http://localhost:8080/api/test/produit/";
-  private produitsOnSaleUrl = "http://localhost:8080/api/test/promotion/today/"
-  private categorieProduitsUrlWithId = "http://localhost:8080/api/test/produit/categorie/";
-  private addPromotionUrl = "http://localhost:8080/api/test/promotion/";
+  
+
+  private allProduitsUrl = "https://back2-0-446dxhl2ua-ey.a.run.app/api/test/produit/";
+  private addProduitUrl = "https://back2-0-446dxhl2ua-ey.a.run.app/api/test/produit/";
+  private produitsOnSaleUrl = "https://back2-0-446dxhl2ua-ey.a.run.app/api/test/promotion/today/"
+  private categorieProduitsUrlWithId = "https://back2-0-446dxhl2ua-ey.a.run.app/api/test/produit/categorie/";
+  private addPromotionUrl = "https://back2-0-446dxhl2ua-ey.a.run.app/api/test/promotion/";
 
     /**Get produits from the server */
     getAllProduits(): Observable<Produit[]> {

@@ -9,6 +9,7 @@ export class StorageService {
   constructor() {}
 
   clean(): void {
+    window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.clear();
   }
 

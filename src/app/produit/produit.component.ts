@@ -10,16 +10,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class ProduitComponent implements OnInit {
 
-  /**TEST SELECT PRODUIT
-   *
-   *  */
-
-
-
-
-  /* */
-
-
   produitsList: Produit[] = [];
 
   constructor(private produitService: ProduitService) { }

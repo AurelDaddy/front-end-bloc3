@@ -1,5 +1,6 @@
-<div class="col-md-12">
-    <div class="card card-container">
+<div class="mb-3" style="max-width: 22rem;">
+<!--<div class="col-md-12">
+    <div class="card card-container">-->
         <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="username">Username</label>
@@ -35,5 +36,5 @@
         <div class="alert alert-success" *ngIf="isLoggedIn">
             Logged in as {{ roles }}.
         </div>
-    </div>
+    <!--</div>-->
 </div>
