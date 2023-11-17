@@ -1,0 +1,19 @@
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div *ngFor="let produit of produitsList" class="col">
+        
+            <div class="card h-100">
+            <!--<div class="card" style="max-width: 18rem;">-->
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{produit.libelle}}</h5>
+                    <p class="card-text">{{produit.description}}</p>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"><b>{{produit.prix}} €</b></small>
+                        <div class="text-danger" *ngIf="produit.promotion"><span class="badge text-bg-danger">EN PROMOTION</span></div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</div>

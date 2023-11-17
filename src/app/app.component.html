@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg bg-success-subtle">
+  <img class="brand-logo" src="/assets/branch-svgrepo-com.svg" alt="logo" aria-hidden="true">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mercadona</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/produit/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/promotion/">Promotions</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="/admin/">AdminTest</a>
+        </li>-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/categorie/2">Meubles</a></li>
+            <li><a class="dropdown-item" href="/categorie/1">Epicerie</a></li>
+            <li><a class="dropdown-item" href="#">Boissons</a></li>
+            <li><a class="dropdown-item" href="#">Surgelés</a></li>
+            <li><a class="dropdown-item" href="#">Hygiène et Beauté</a></li>
+            <li><a class="dropdown-item" href="#">Entretien et nettioyage</a></li>
+            <li><a class="dropdown-item" href="#">Bébé</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/profile/" class="nav-link" routerLink="profile">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="formulaire">Ajouter un produit</a></li>
+            <li><a class="dropdown-item" href="addpromotion">Ajouter une promotion</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a href="/login" class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+  <router-outlet></router-outlet>
+</body>
+
+  <footer class="footer py-1 bg-success-subtle text-center">
+  <div class="container">
+    <a class="btn btn-link btn-floating btn-sm" href="#!" role="button"><i class="fa-brands fa-facebook"
+        style="color: #936969;"></i></a>
+
+    <a class="btn btn-link btn-floating btn-sm" href="#!" role="button"><i class="fab fa-twitter"
+        style="color: #936969;"></i>
+    </a>
+
+    <a class="btn btn-link btn-floating btn-sm" href="#!" role="button"><i class="fab fa-google"
+        style="color: #936969;"></i>
+    </a>
+
+    <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="fab fa-instagram"
+        style="color: #936969;"></i></a>
+
+
+    <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="fab fa-linkedin"
+        style="color: #936969;"></i></a>
+  </div>
+
+  <p class="text-body-secondary" class="fw-semibold">Mercadona-2023</p>
+
+</footer>
+

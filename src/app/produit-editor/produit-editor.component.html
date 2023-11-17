@@ -1,0 +1,31 @@
+<form [formGroup]="produitForm" (ngSubmit)="onSubmit()">
+
+    <p class="h4">Produit à ajouter: </p>
+    <div class="mb-3" style="max-width: 22rem;">
+        <label for="libelle" class="form-label">Libelle: </label>
+        <input class="form-control" id="libelle" type="text" formControlName="libelle">
+    </div>
+    <div class="mb-3" style="max-width: 22rem;">
+        <label for="description" class="form-label">Description: </label>
+        <input class="form-control" id="description" type="text" formControlName="description">
+    </div>
+    <div class="mb-3" style="max-width: 22rem;">
+        <label for="prix" class="form-label">Prix: </label>
+        <div class="input-group">
+            <input class="form-control" id="prix" type="number" formControlName="prix">
+            <span class="input-group-text">€</span>
+        </div>
+    </div>
+    <div formGroupName="categorie" class="mb-3" style="max-width: 22rem;">
+        <p class="h4">Categorie du produit: </p>
+        <!--<label for="libelle" class="form-label">Libelle: </label>
+        <input class="form-control" id="libelle" type="text" formControlName="libelle">-->
+        <label for="libelle" class="form-label">Libelle: </label>
+        <select class="form-select" aria-label="Default select example" style="max-width: 22rem;" formControlName="libelle">
+            <option [ngValue]="null" disabled>Choose your profile</option>
+            <option *ngFor="let cat of categories" [ngValue]="cat">{{ cat}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-outline-success" [disabled]="!produitForm.valid">Submit</button>
+</form>
+
